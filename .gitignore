@@ -1,0 +1,26 @@
+# Private candidate and application material. Keep real inputs outside the repo.
+/cv/
+/cvs/
+/resumes/
+/applications/
+/private-cv/
+/private-candidate-data/
+/candidate-data/
+/output/
+/outputs/
+
+# Common private resume and application filenames.
+master_cv.*
+main_example.*
+*_cv.pdf
+*_cv.tex
+*_cv.txt
+*_resume.pdf
+*_resume.tex
+*_resume.txt
+cover_letter.*
+
+# Sanitized, non-identifying fixtures are deliberately versioned for validation.
+!tests/
+!tests/fixtures/
+!tests/fixtures/**
