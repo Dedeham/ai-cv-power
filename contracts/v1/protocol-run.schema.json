@@ -41,6 +41,7 @@
         "evidence_state": {"enum": ["supported", "needs_confirmation", "unsupported"]},
         "coverage_state": {"enum": ["represented", "missing", "not_applicable"]},
         "permitted_action": {"enum": ["represent_with_evidence", "ask_question", "exclude_claim", "show_gap"]},
+        "evidence_refs": {"type": "array", "items": {"$ref": "#/$defs/id"}, "uniqueItems": true},
         "question": {"type": "string", "minLength": 1}
       },
       "additionalProperties": false
