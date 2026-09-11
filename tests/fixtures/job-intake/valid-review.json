@@ -1,0 +1,84 @@
+{
+  "domain_terms": [
+    {"end_line": 3, "start_line": 3, "text": "municipal services"},
+    {"end_line": 6, "start_line": 6, "text": "operational reporting"},
+    {"end_line": 7, "start_line": 7, "text": "data quality"}
+  ],
+  "requirement_categories": [
+    {"category": "responsibility", "requirement_id": "req-001"},
+    {"category": "responsibility", "requirement_id": "req-002"},
+    {"category": "must_have", "requirement_id": "req-003"},
+    {"category": "must_have", "requirement_id": "req-004"},
+    {"category": "preferred", "requirement_id": "req-005"}
+  ],
+  "requirement_matrix": [
+    {
+      "coverage_state": "not_applicable",
+      "evidence_state": "needs_confirmation",
+      "exact_terms": ["Python data pipelines", "operational reporting"],
+      "id": "req-001",
+      "permitted_action": "ask_question",
+      "priority": "high",
+      "question": "Does the reviewed candidate evidence ledger support this requirement?",
+      "text": "Design and operate reliable Python data pipelines for operational reporting."
+    },
+    {
+      "coverage_state": "not_applicable",
+      "evidence_state": "needs_confirmation",
+      "exact_terms": ["data quality"],
+      "id": "req-002",
+      "permitted_action": "ask_question",
+      "priority": "medium",
+      "question": "Does the reviewed candidate evidence ledger support this requirement?",
+      "text": "Collaborate with analysts and platform engineers to improve data quality."
+    },
+    {
+      "coverage_state": "not_applicable",
+      "evidence_state": "needs_confirmation",
+      "exact_terms": ["3+ years", "professional software engineering"],
+      "id": "req-003",
+      "permitted_action": "ask_question",
+      "priority": "critical",
+      "question": "Does the reviewed candidate evidence ledger support this requirement?",
+      "text": "Have at least three years of professional software engineering experience."
+    },
+    {
+      "coverage_state": "not_applicable",
+      "evidence_state": "needs_confirmation",
+      "exact_terms": ["Python", "SQL", "workflow orchestration"],
+      "id": "req-004",
+      "permitted_action": "ask_question",
+      "priority": "critical",
+      "question": "Does the reviewed candidate evidence ledger support this requirement?",
+      "text": "Have experience with Python, SQL, and workflow orchestration."
+    },
+    {
+      "coverage_state": "not_applicable",
+      "evidence_state": "needs_confirmation",
+      "exact_terms": ["regulated", "public-sector"],
+      "id": "req-005",
+      "permitted_action": "ask_question",
+      "priority": "low",
+      "question": "Does the reviewed candidate evidence ledger support this requirement?",
+      "text": "Experience delivering production systems in a regulated or public-sector environment is preferred."
+    }
+  ],
+  "review_status": "reviewed",
+  "schema_version": "job-intake-review/v1",
+  "seniority_signals": [
+    {"end_line": 10, "start_line": 10, "text": "3+ years"},
+    {"end_line": 16, "start_line": 16, "text": "senior individual-contributor"}
+  ],
+  "source": {
+    "label": "synthetic-job-description.txt",
+    "line_count": 16,
+    "sha256": "62764511e1484ffa5aaa91abcd1cfa2934350e08bd432a1de126200b65dfe53e"
+  },
+  "source_references": [
+    {"end_line": 6, "requirement_id": "req-001", "start_line": 6},
+    {"end_line": 7, "requirement_id": "req-002", "start_line": 7},
+    {"end_line": 10, "requirement_id": "req-003", "start_line": 10},
+    {"end_line": 11, "requirement_id": "req-004", "start_line": 11},
+    {"end_line": 12, "requirement_id": "req-005", "start_line": 12}
+  ]
+}
