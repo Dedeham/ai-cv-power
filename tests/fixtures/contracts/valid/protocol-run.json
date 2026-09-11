@@ -1,0 +1,110 @@
+{
+  "schema_version": "resume-tailoring/v1",
+  "run_id": "synthetic-product-analyst-run",
+  "evidence_ledger": [
+    {
+      "id": "ev-product-metric",
+      "kind": "result",
+      "fact_state": "verified",
+      "source_excerpt": "Improved activation completion by 18% after simplifying onboarding."
+    },
+    {
+      "id": "ev-sql-tool",
+      "kind": "tool",
+      "fact_state": "verified",
+      "source_excerpt": "Used SQL to investigate product-funnel behavior."
+    },
+    {
+      "id": "ev-experiment-ownership",
+      "kind": "responsibility",
+      "fact_state": "possible",
+      "source_excerpt": "Contributed to A/B test planning with the growth team.",
+      "confirmation_question": "Did you own an experiment end-to-end, or contribute as part of the team?"
+    }
+  ],
+  "requirement_matrix": [
+    {
+      "id": "req-activation",
+      "text": "Improve user activation",
+      "priority": "high",
+      "exact_terms": ["activation"],
+      "evidence_state": "supported",
+      "coverage_state": "represented",
+      "permitted_action": "represent_with_evidence"
+    },
+    {
+      "id": "req-sql",
+      "text": "Use SQL for product analysis",
+      "priority": "medium",
+      "exact_terms": ["SQL"],
+      "evidence_state": "supported",
+      "coverage_state": "represented",
+      "permitted_action": "represent_with_evidence"
+    },
+    {
+      "id": "req-python",
+      "text": "Build Python data pipelines",
+      "priority": "low",
+      "exact_terms": ["Python"],
+      "evidence_state": "unsupported",
+      "coverage_state": "not_applicable",
+      "permitted_action": "exclude_claim"
+    }
+  ],
+  "tailored_resume": {
+    "version_id": "resume-v1",
+    "claims": [
+      {
+        "id": "claim-activation",
+        "section": "experience",
+        "claim_type": "substantive",
+        "text": "Simplified onboarding to improve activation completion by 18%.",
+        "evidence_refs": ["ev-product-metric"],
+        "requirement_refs": ["req-activation"]
+      },
+      {
+        "id": "claim-sql",
+        "section": "skills",
+        "claim_type": "substantive",
+        "text": "SQL product-funnel analysis",
+        "evidence_refs": ["ev-sql-tool"],
+        "requirement_refs": ["req-sql"]
+      },
+      {
+        "id": "claim-heading",
+        "section": "summary",
+        "claim_type": "editorial",
+        "text": "Product analyst",
+        "evidence_refs": [],
+        "requirement_refs": []
+      }
+    ]
+  },
+  "defect_queue": [
+    {
+      "id": "defect-confirm-ownership",
+      "severity": "medium",
+      "status": "open",
+      "rubric_dimension": "factual_integrity",
+      "recommendation": "Ask the candidate about experiment ownership."
+    }
+  ],
+  "verification_report": {
+    "overall_status": "needs_review",
+    "checks": [
+      {"id": "check-claim-grounding", "status": "pass"}
+    ]
+  },
+  "revision_history": [
+    {
+      "revision_id": "revision-1",
+      "material_changes": [
+        {"claim_id": "claim-activation", "change_type": "created", "reason": "Represent supported activation evidence."}
+      ]
+    }
+  ],
+  "approval_record": {
+    "status": "pending",
+    "final_version": "resume-v1"
+  }
+}

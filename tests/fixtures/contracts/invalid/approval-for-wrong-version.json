@@ -1,0 +1,11 @@
+{
+  "schema_version": "resume-tailoring/v1",
+  "run_id": "invalid-approval-version",
+  "evidence_ledger": [],
+  "requirement_matrix": [],
+  "tailored_resume": {"version_id": "resume-v2", "claims": []},
+  "defect_queue": [],
+  "verification_report": {"overall_status": "pass", "checks": []},
+  "revision_history": [],
+  "approval_record": {"status": "approved", "final_version": "resume-v1"}
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "resume-tailoring/v1",
+  "run_id": "invalid-unsupported-represented",
+  "evidence_ledger": [{"id": "ev-1", "kind": "tool", "fact_state": "verified", "source_excerpt": "Used spreadsheets."}],
+  "requirement_matrix": [{"id": "req-1", "text": "Python", "priority": "high", "evidence_state": "unsupported", "coverage_state": "not_applicable", "permitted_action": "exclude_claim"}],
+  "tailored_resume": {"version_id": "resume-v1", "claims": [{"id": "claim-1", "section": "skills", "claim_type": "substantive", "text": "Python", "evidence_refs": ["ev-1"], "requirement_refs": ["req-1"]}]},
+  "defect_queue": [],
+  "verification_report": {"overall_status": "pass", "checks": []},
+  "revision_history": [],
+  "approval_record": {"status": "pending", "final_version": "resume-v1"}
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-cv-power.local/contracts/v1/protocol-run.schema.json",
+  "title": "Resume tailoring protocol run",
+  "type": "object",
+  "required": ["schema_version", "run_id", "evidence_ledger", "requirement_matrix", "tailored_resume", "defect_queue", "verification_report", "revision_history", "approval_record"],
+  "properties": {
+    "schema_version": {"const": "resume-tailoring/v1"},
+    "run_id": {"$ref": "#/$defs/id"},
+    "evidence_ledger": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+    "requirement_matrix": {"type": "array", "items": {"$ref": "#/$defs/requirement"}},
+    "tailored_resume": {"$ref": "#/$defs/resume"},
+    "defect_queue": {"type": "array", "items": {"$ref": "#/$defs/defect"}},
+    "verification_report": {"$ref": "#/$defs/verification"},
+    "revision_history": {"type": "array", "items": {"$ref": "#/$defs/revision"}},
+    "approval_record": {"$ref": "#/$defs/approval"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]{2,63}$"},
+    "evidence": {
+      "type": "object",
+      "required": ["id", "kind", "fact_state", "source_excerpt"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["role", "responsibility", "tool", "result", "date", "qualification", "credential", "other"]},
+        "fact_state": {"enum": ["verified", "possible", "unknown"]},
+        "source_excerpt": {"type": "string", "minLength": 1},
+        "confirmation_question": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "requirement": {
+      "type": "object",
+      "required": ["id", "text", "priority", "evidence_state", "coverage_state", "permitted_action"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "text": {"type": "string", "minLength": 1},
+        "priority": {"enum": ["critical", "high", "medium", "low"]},
+        "exact_terms": {"type": "array", "items": {"type": "string"}},
+        "evidence_state": {"enum": ["supported", "needs_confirmation", "unsupported"]},
+        "coverage_state": {"enum": ["represented", "missing", "not_applicable"]},
+        "permitted_action": {"enum": ["represent_with_evidence", "ask_question", "exclude_claim", "show_gap"]},
+        "question": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "resume": {
+      "type": "object",
+      "required": ["version_id", "claims"],
+      "properties": {
+        "version_id": {"$ref": "#/$defs/id"},
+        "claims": {"type": "array", "items": {"$ref": "#/$defs/claim"}}
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "required": ["id", "section", "claim_type", "text", "evidence_refs", "requirement_refs"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "section": {"type": "string", "minLength": 1},
+        "claim_type": {"enum": ["substantive", "editorial"]},
+        "text": {"type": "string", "minLength": 1},
+        "evidence_refs": {"type": "array", "items": {"$ref": "#/$defs/id"}},
+        "requirement_refs": {"type": "array", "items": {"$ref": "#/$defs/id"}}
+      },
+      "additionalProperties": false
+    },
+    "defect": {
+      "type": "object",
+      "required": ["id", "severity", "status", "rubric_dimension", "recommendation"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "severity": {"enum": ["critical", "high", "medium", "low"]},
+        "status": {"enum": ["open", "resolved", "waived"]},
+        "rubric_dimension": {"type": "string", "minLength": 1},
+        "claim_id": {"$ref": "#/$defs/id"},
+        "recommendation": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": ["overall_status", "checks"],
+      "properties": {
+        "overall_status": {"enum": ["pass", "fail", "needs_review"]},
+        "checks": {"type": "array", "items": {"type": "object", "required": ["id", "status"], "properties": {"id": {"$ref": "#/$defs/id"}, "status": {"enum": ["pass", "fail", "skipped"]}}, "additionalProperties": false}}
+      },
+      "additionalProperties": false
+    },
+    "revision": {
+      "type": "object",
+      "required": ["revision_id", "material_changes"],
+      "properties": {
+        "revision_id": {"$ref": "#/$defs/id"},
+        "material_changes": {"type": "array", "items": {"type": "object", "required": ["claim_id", "change_type", "reason"], "properties": {"claim_id": {"$ref": "#/$defs/id"}, "change_type": {"enum": ["created", "rewritten", "removed"]}, "reason": {"type": "string", "minLength": 1}}, "additionalProperties": false}}
+      },
+      "additionalProperties": false
+    },
+    "approval": {
+      "type": "object",
+      "required": ["status", "final_version"],
+      "properties": {"status": {"enum": ["pending", "approved", "rejected"]}, "final_version": {"$ref": "#/$defs/id"}},
+      "additionalProperties": false
+    }
+  }
+}
