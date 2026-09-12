@@ -14,3 +14,9 @@ python3 ../../tools/resume_verify.py --draft draft.json \
 
 The verifier must report one page and extract every claimed bullet. If content
 does not fit, remove or condense low-priority evidence before reducing readability.
+
+Use the fitting report after every render:
+
+```bash
+python3 tools/resume_fit.py --pdf private-cv/run/resume.pdf
+```
