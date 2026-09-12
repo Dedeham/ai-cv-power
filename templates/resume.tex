@@ -1,0 +1,32 @@
+% Copy this file to an ignored private directory before adding candidate data.
+% Keep essential content as ordinary selectable text in this single-column source.
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.58in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.1em,noitemsep,topsep=2pt}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-3pt}\hrule]
+\begin{document}
+\begin{center}
+{\LARGE YOUR NAME}\\
+City, Region \textbar\ email@example.com \textbar\ +1 555 0100 \textbar\ linkedin.com/in/example
+\end{center}
+\section*{Summary}
+% Replace only with an editorial claim from the validated draft.
+Evidence-grounded summary tailored to the target role.
+\section*{Experience}
+\textbf{Job Title} \hfill Employer \hfill 2022--Present
+\begin{itemize}
+  % One validated substantive claim per item; preserve its evidence and requirement IDs in draft.json.
+  \item Built Python data pipelines for operational reporting.
+\end{itemize}
+\section*{Skills}
+% Include only tools present in supported candidate evidence.
+Python, SQL
+\section*{Education}
+Degree, Institution
+\end{document}
