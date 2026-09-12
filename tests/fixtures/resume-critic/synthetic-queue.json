@@ -1,0 +1,1 @@
+{"schema_version":"resume-critic/v1","run_id":"synthetic-match-run","defects":[{"id":"defect-style","severity":"medium","rubric_dimension":"language_tone","claim_id":"claim-editorial","finding":"The summary is generic and adds little role-specific evidence.","recommendation":"Remove it or replace it only with evidence-grounded content."}]}
