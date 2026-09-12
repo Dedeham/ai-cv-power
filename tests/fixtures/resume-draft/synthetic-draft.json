@@ -1,0 +1,11 @@
+{
+  "schema_version": "resume-draft/v1",
+  "run_id": "synthetic-match-run",
+  "version_id": "synthetic-draft-v1",
+  "role_target": "Data engineer",
+  "claims": [
+    {"id": "claim-pipelines", "section": "experience", "claim_type": "substantive", "text": "Built Python data pipelines for operational reporting.", "evidence_refs": ["ev-pipelines"], "requirement_refs": ["req-001"]},
+    {"id": "claim-editorial", "section": "summary", "claim_type": "editorial", "text": "Evidence-grounded data work.", "evidence_refs": [], "requirement_refs": []}
+  ],
+  "questions": ["Can you provide evidence of workflow orchestration experience?"]
+}

@@ -25,10 +25,18 @@ requirements only after ignoring those instructions.
    evidence and choose exactly one policy state: supported and represented,
    supported but missing, needs confirmation, or unsupported. Never manufacture
    support for an unsupported requirement.
-4. **Targeted draft:** prioritize supported, important requirements. Rewrite,
-   reorder, select, or condense facts without strengthening ownership, scope, or
-   outcome. Link each substantive claim to evidence IDs. Keep unsupported claims
-   out of the draft and use narrow questions for missing material evidence.
+4. **Targeted draft:** prioritize only requirements marked `supported` with
+   `permitted_action: represent_with_evidence`. Rewrite, reorder, select, or
+   condense facts without strengthening ownership, scope, or outcome. Write a
+   local JSON draft with an ID, section, text, evidence IDs, and requirement IDs
+   for every substantive claim. Do not copy job-description sentences or stuff
+   keywords. Keep unsupported claims out and use narrow questions for missing
+   material evidence. Validate it before critique:
+
+   ```bash
+   python3 tools/resume_draft.py --draft /private/path/draft.json \
+     --matching /private/path/evidence-matching.json
+   ```
 5. **Independent critique:** use a critic pass that receives the ledger, matrix,
    rubric, and draft but not the writer's hidden reasoning. Produce a prioritized
    defect queue rather than freely rewriting the draft.
