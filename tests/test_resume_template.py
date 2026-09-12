@@ -6,5 +6,6 @@ class ResumeTemplateTests(unittest.TestCase):
   text=(ROOT/'templates'/'resume.tex').read_text()
   self.assertNotIn('tabular',text);self.assertNotIn('multicol',text);self.assertNotIn('includegraphics',text)
   for heading in ('Summary','Experience','Skills','Education'): self.assertIn(heading,text)
+  self.assertIn('Evidence-grounded data work.',text)
  def test_private_resume_output_is_ignored(self):
   self.assertIn('/private-cv',(ROOT/'.gitignore').read_text())
