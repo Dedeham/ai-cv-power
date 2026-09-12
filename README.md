@@ -48,3 +48,36 @@ write only user-approved local artifacts, and run the validator. A runtime must:
 
 The current quality gates and configurable policy decisions live in
 `docs/product-policy-rubric.md`.
+
+## Test with your private CV
+
+Create an ignored workspace, keeping all real inputs and outputs there:
+
+```bash
+mkdir -p private-cv/run
+cp /path/to/master_cv.tex private-cv/run/master_cv.tex
+cp /path/to/job-description.txt private-cv/run/job-description.txt
+```
+
+In Codex, ask: “Follow `protocols/candidate-intake.md`,
+`protocols/job-intake.md`, `protocols/evidence-matching.md`, and
+`protocols/tailored-resume.md` for the two files in `private-cv/run`. Write all
+artifacts there; do not invent facts; stop for my review wherever required.”
+
+After you review the evidence and job-requirement artifacts, ask the agent to
+create `draft.json`, `critic.json`, and an evidence-grounded `resume.tex` using
+the local template. Then export and hard-gate it:
+
+```bash
+python3 tools/export_resume.py --tex private-cv/run/resume.tex \
+  --draft private-cv/run/draft.json --matching private-cv/run/evidence-matching.json \
+  --output-dir private-cv/run/out
+python3 tools/protocol_run.py --matching private-cv/run/evidence-matching.json \
+  --draft private-cv/run/draft.json --critic-queue private-cv/run/critic.json \
+  --pdf private-cv/run/out/resume.pdf --cycles 0
+```
+
+Only accept the result after the coordinator returns
+`needs_candidate_approval`, you review the factual representation, and rerun it
+with `--approved`. Check `git status` before committing: private CV files and
+generated PDFs must remain untracked.
