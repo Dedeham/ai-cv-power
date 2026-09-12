@@ -1,0 +1,42 @@
+{
+  "candidate_review": {"review_status": "reviewed", "run_id": "synthetic-match-run"},
+  "coverage_report": {
+    "needs_confirmation": [{"evidence_refs": ["ev-pipelines", "ev-sql"], "missing_exact_terms": ["workflow orchestration"], "question": "The reviewed evidence directly supports Python, SQL, but not workflow orchestration. Can you provide evidence that establishes the missing requirement terms?", "requirement_id": "req-004"}],
+    "represented": [],
+    "supported_but_missing": [{"evidence_refs": ["ev-pipelines"], "requirement_id": "req-001"}],
+    "unsupported": [
+      {"permitted_action": "exclude_claim", "requirement_id": "req-002"},
+      {"permitted_action": "exclude_claim", "requirement_id": "req-003"},
+      {"permitted_action": "exclude_claim", "requirement_id": "req-005"}
+    ]
+  },
+  "evidence_ledger": [
+    {"fact_state": "verified", "id": "ev-pipelines", "kind": "responsibility", "source_excerpt": "Built Python data pipelines for operational reporting."},
+    {"fact_state": "verified", "id": "ev-sql", "kind": "tool", "source_excerpt": "Used SQL to prepare internal example reports."},
+    {"fact_state": "verified", "id": "ev-team-result", "kind": "result", "source_excerpt": "Contributed to a team improvement of 12 percent."},
+    {"fact_state": "verified", "id": "ev-date", "kind": "date", "source_excerpt": "Analyst role from 2019 to 2022."}
+  ],
+  "evidence_source_references": [
+    {"evidence_id": "ev-pipelines", "source_span": {"line_end": 2, "line_start": 2}},
+    {"evidence_id": "ev-sql", "source_span": {"line_end": 3, "line_start": 3}},
+    {"evidence_id": "ev-team-result", "source_span": {"line_end": 4, "line_start": 4}},
+    {"evidence_id": "ev-date", "source_span": {"line_end": 5, "line_start": 5}}
+  ],
+  "job_review": {"review_status": "reviewed", "source_sha256": "62764511e1484ffa5aaa91abcd1cfa2934350e08bd432a1de126200b65dfe53e"},
+  "requirement_matrix": [
+    {"coverage_state": "missing", "evidence_refs": ["ev-pipelines"], "evidence_state": "supported", "exact_terms": ["Python data pipelines", "operational reporting"], "id": "req-001", "permitted_action": "represent_with_evidence", "priority": "high", "text": "Design and operate reliable Python data pipelines for operational reporting."},
+    {"coverage_state": "not_applicable", "evidence_refs": [], "evidence_state": "unsupported", "exact_terms": ["data quality"], "id": "req-002", "permitted_action": "exclude_claim", "priority": "medium", "text": "Collaborate with analysts and platform engineers to improve data quality."},
+    {"coverage_state": "not_applicable", "evidence_refs": [], "evidence_state": "unsupported", "exact_terms": ["3+ years", "professional software engineering"], "id": "req-003", "permitted_action": "exclude_claim", "priority": "critical", "text": "Have at least three years of professional software engineering experience."},
+    {"coverage_state": "not_applicable", "evidence_refs": ["ev-pipelines", "ev-sql"], "evidence_state": "needs_confirmation", "exact_terms": ["Python", "SQL", "workflow orchestration"], "id": "req-004", "permitted_action": "ask_question", "priority": "critical", "question": "The reviewed evidence directly supports Python, SQL, but not workflow orchestration. Can you provide evidence that establishes the missing requirement terms?", "text": "Have experience with Python, SQL, and workflow orchestration."},
+    {"coverage_state": "not_applicable", "evidence_refs": [], "evidence_state": "unsupported", "exact_terms": ["regulated", "public-sector"], "id": "req-005", "permitted_action": "exclude_claim", "priority": "low", "text": "Experience delivering production systems in a regulated or public-sector environment is preferred."}
+  ],
+  "requirement_source_references": [
+    {"end_line": 6, "requirement_id": "req-001", "start_line": 6},
+    {"end_line": 7, "requirement_id": "req-002", "start_line": 7},
+    {"end_line": 10, "requirement_id": "req-003", "start_line": 10},
+    {"end_line": 11, "requirement_id": "req-004", "start_line": 11},
+    {"end_line": 12, "requirement_id": "req-005", "start_line": 12}
+  ],
+  "run_id": "synthetic-match-run",
+  "schema_version": "evidence-matching/v1"
+}

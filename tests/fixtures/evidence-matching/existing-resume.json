@@ -1,0 +1,11 @@
+{
+  "version_id": "existing-draft-v1",
+  "claims": [
+    {
+      "id": "claim-pipelines",
+      "claim_type": "substantive",
+      "evidence_refs": ["ev-pipelines"],
+      "requirement_refs": ["req-001"]
+    }
+  ]
+}

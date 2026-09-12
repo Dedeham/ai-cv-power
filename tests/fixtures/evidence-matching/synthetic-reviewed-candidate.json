@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate-intake/v1",
+  "run_id": "synthetic-match-run",
+  "review_status": "reviewed",
+  "evidence_ledger": [
+    {
+      "id": "ev-pipelines",
+      "kind": "responsibility",
+      "fact_state": "verified",
+      "source_excerpt": "Built Python data pipelines for operational reporting."
+    },
+    {
+      "id": "ev-sql",
+      "kind": "tool",
+      "fact_state": "verified",
+      "source_excerpt": "Used SQL to prepare internal example reports."
+    },
+    {
+      "id": "ev-team-result",
+      "kind": "result",
+      "fact_state": "verified",
+      "source_excerpt": "Contributed to a team improvement of 12 percent."
+    },
+    {
+      "id": "ev-date",
+      "kind": "date",
+      "fact_state": "verified",
+      "source_excerpt": "Analyst role from 2019 to 2022."
+    },
+    {
+      "id": "ev-rejected-tool",
+      "kind": "tool",
+      "fact_state": "possible",
+      "source_excerpt": "Mentioned workflow orchestration in an unconfirmed note.",
+      "confirmation_question": "Was this tool used in the role?"
+    }
+  ],
+  "review_items": [
+    {"evidence_id": "ev-pipelines", "source_span": {"line_start": 2, "line_end": 2}, "status": "accepted", "allowed_wording": "Use only the supported meaning."},
+    {"evidence_id": "ev-sql", "source_span": {"line_start": 3, "line_end": 3}, "status": "accepted", "allowed_wording": "Use only the supported meaning."},
+    {"evidence_id": "ev-team-result", "source_span": {"line_start": 4, "line_end": 4}, "status": "accepted", "allowed_wording": "Use only the supported meaning."},
+    {"evidence_id": "ev-date", "source_span": {"line_start": 5, "line_end": 5}, "status": "accepted", "allowed_wording": "Use only the supported meaning."},
+    {"evidence_id": "ev-rejected-tool", "source_span": {"line_start": 6, "line_end": 6}, "status": "rejected", "allowed_wording": "Use only the supported meaning."}
+  ]
+}
